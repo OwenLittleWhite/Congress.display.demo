@@ -1,6 +1,6 @@
 # congress_display
 
-> Congress Display Vue.js Demo
+> Congress Display Demo based on Vue.js and Vuetify
 
 ## Build Setup
 
