@@ -5,11 +5,18 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    loadedAbstracts: []
+    loadedAbstracts: [],
+    loginState: {
+      isLogin: false,
+      email: ''
+    }
   },
   mutations: {
     fetchAbstracts(state, abstracts) {
       state.loadedAbstracts = abstracts
+    },
+    updateLoginState(state, loginState) {
+      state.loginState = loginState
     }
   },
   getters: {

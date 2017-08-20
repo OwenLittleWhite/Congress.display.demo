@@ -27,16 +27,19 @@
                     <h5 class="primary--text mt-4">Conclusions :</h5>
                     <div v-html="abstract.conclusions.join('</br>')"></div>
                   </div>
-  
+
                 </div>
               </v-card-title>
             </v-layout>
-  
+
             <v-layout v-if="hasFiles" row>
               <v-card-actions>
                 <v-btn :href="file.src" target="_blank">
                   <v-icon left light>arrow_forward</v-icon>
                   {{ file.hint }}
+                </v-btn>
+                <v-btn icon :class="likeClass" @click="change()">
+                  <v-icon>thumb_up</v-icon>
                 </v-btn>
               </v-card-actions>
             </v-layout>
@@ -94,6 +97,26 @@ export default {
       }).map(author => {
         return author.displayName
       }).join(', ')
+    }
+  },
+  data() {
+    return {
+      like: false,
+      likeClass: 'deep-grey--text'
+    }
+  },
+  methods: {
+    change() {
+      if (!this.$store.state.loginState.isLogin) {
+        this.$router.push('/login')
+      } else {
+        this.like = !this.like
+        if (this.like === true) {
+          this.likeClass = 'deep-orange--text'
+        } else {
+          this.likeClass = 'deep-grey--text'
+        }
+      }
     }
   }
 }

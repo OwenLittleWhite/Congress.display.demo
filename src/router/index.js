@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import Abstracts from '@/components/Abstract/Abstracts'
 import Abstract from '@/components/Abstract/Abstract'
+import Login from '@/components/Login/Login'
 Vue.use(Router)
 
 export default new Router({
@@ -23,6 +24,12 @@ export default new Router({
       name: 'Abstract',
       props: true,
       component: Abstract
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      props: true,
+      component: Login
     }
 
   ],
