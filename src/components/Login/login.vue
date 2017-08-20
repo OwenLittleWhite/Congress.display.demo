@@ -13,8 +13,8 @@
           </v-flex>
         </v-layout>
         <v-layout row class="mt-4">
-          <v-flex xs12 sm12 md6 offset-md3>
-            <v-btn @click="login()" v-if="loginShow">Login</v-btn>
+          <v-flex class="text-xs-center">
+            <v-btn @click="login()" v-if="loginShow" primary>Login</v-btn>
             <v-progress-circular indeterminate v-if="progressShow"></v-progress-circular>
           </v-flex>
         </v-layout>
